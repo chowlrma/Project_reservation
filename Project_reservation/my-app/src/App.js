@@ -1,9 +1,12 @@
 import SearchBar from './SearchBar';
 import './App.css';
+import PeopleNum from './PeopleNum';
  
 export default function App() {
   let subject = 'LOGO';
   const searchItems = []
+
+
 
   return (    
     <div className="App">
@@ -14,9 +17,10 @@ export default function App() {
       <div className="aaa">
         <SearchBar searchItems={searchItems}/>
       </div>
-      <div>
-        
+      <div className="peoplenum">
+        <PeopleNum />
       </div>
+      
     </div>
 
     
