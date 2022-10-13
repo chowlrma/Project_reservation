@@ -1,35 +1,41 @@
-import React from 'react';
+import React from "react";
 
-class App extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            value:0
-        }
-    }
-    onClickHandler=(plusMinus)=>{
-        this.setState({value:this.state.value+plusMinus})
-
-    }
-    render(){
-        return(
-            <div>
-                <Display value={this.state.value}/>
-                <Button mother={()=>this.onClickHandler(1)}>추가</Button>
-                <div><button onClick={()=>this.onClickHandler(-1)}>감소</button></div>
-            </div>
-        );
-    }
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 0
+    };
+  }
+  onClickHandler = (plusMinus) => {
+    this.setState({ value: this.state.value + plusMinus });
+  };
+  render() {
+    return (
+      <div>
+        <div className="displaynum">
+          <Display value={this.state.value} />
+        </div>
+        <div className="buttonadd">
+          <Button mother={() => this.onClickHandler(1)}>추가</Button>
+        </div>
+        <div className="buttonremove">
+          <button onClick={() => this.onClickHandler(-1)}>감소</button>
+        </div>
+      </div>
+    );
+  }
 }
-const Button = ({children,mother}) =>
-<div>
+const Button = ({ children, mother }) => (
+  <div>
     <button onClick={mother}>{children}</button>
-</div>
+  </div>
+);
 
-const Display = (props) =>
-<div>
+const Display = (props) => (
+  <div>
     <h1>{props.value}</h1>
-</div>
+  </div>
+);
 
 export default App;
-

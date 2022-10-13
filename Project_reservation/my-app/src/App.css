@@ -1,18 +1,26 @@
 .App {
-    padding:10px;
+    padding: 10px;
     justify-content: center;
     align-items: center;
 }
+
 .searchBar {
-    padding:10px;
+    padding: 10px;
     display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     
-}
-.searchBar ul li{
-    text-align:left;
-    text-decoration:none;
+
 }
 
+.searchBar ul li {
+    text-align: left;
+    text-decoration: none;
+}
 
-
-
+.peoplenum{
+    float:left;
+    margin-right: 10px;
+}

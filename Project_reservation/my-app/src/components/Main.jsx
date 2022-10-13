@@ -1,6 +1,7 @@
 import SearchBar from "../SearchBar";
 import "../App.css";
 import PeopleNum from "../PeopleNum";
+import PeopleNum1 from "../PeopleNum1";
 import { Link } from "react-router-dom";
 
 export default function Main() {
@@ -11,12 +12,12 @@ export default function Main() {
     <>
       <div className="App">
         <div>{subject}</div>
-        <div className="searchbar">
-          <div>
+        <div>
+          <div className="searchbar">
             <SearchBar searchItems={searchItems} />
           </div>
           <div>
-            <PeopleNum />
+            <PeopleNum1/>
           </div>
         </div>
       </div>
