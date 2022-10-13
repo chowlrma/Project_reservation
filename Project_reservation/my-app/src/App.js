@@ -1,28 +1,23 @@
-import SearchBar from './SearchBar';
-import './App.css';
-import PeopleNum from './PeopleNum';
- 
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Expenses from "./components/Expenses";
+import Invoices from "./components/Invoices";
+import Main from "./components/Main";
+import Camping from "./components/Camping";
+import Pension from "./components/Pension";
+
 export default function App() {
-  let subject = 'LOGO';
-  const searchItems = []
-
-
-
-  return (    
-    <div className="App">
-      <div>
-      {subject}
-      </div>
-
-      <div className="aaa">
-        <SearchBar searchItems={searchItems}/>
-      </div>
-      <div className="peoplenum">
-        <PeopleNum />
-      </div>
-      
-    </div>
-
-    
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Main />}/>
+            <Route path="/expenses" element={<Expenses />} />
+            <Route path="/invoices" element={<Invoices />} />
+            <Route path="/Camping" element={<Camping />} />
+            <Route path="/Pension" element={<Pension />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }

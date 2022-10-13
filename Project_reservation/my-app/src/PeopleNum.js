@@ -1,5 +1,4 @@
 import React from 'react';
-import './PeopleNum.css';
 
 class App extends React.Component{
     constructor(props){
@@ -33,3 +32,4 @@ const Display = (props) =>
 </div>
 
 export default App;
+
