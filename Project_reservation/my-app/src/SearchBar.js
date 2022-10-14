@@ -29,7 +29,7 @@ const SearchBar = (props) => {
         placeholder="검색"
         onChange={handleInputChange}
       />
-      {shouldDisplayButton && <button onClick={handleInputClear}>clear</button>}
+      {shouldDisplayButton && <button onClick={handleInputClear}>검색</button>}
       <ul>
         {filteredProducts.map((product) => {
           return <li key={product}>{product}</li>;

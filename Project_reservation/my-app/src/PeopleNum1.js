@@ -24,7 +24,7 @@ class Count extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='peoplenum1'>
                 <div className='peoplenum'>인원 {this.state.counter}</div>
                 <button onClick={this.Increase}>증가</button>
                 <button onClick={this.Decrease}>감소</button>

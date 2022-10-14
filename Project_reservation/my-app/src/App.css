@@ -3,7 +3,12 @@
     justify-content: center;
     align-items: center;
 }
-
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 .searchBar {
     padding: 10px;
     display: inline-block;
@@ -11,16 +16,23 @@
     justify-content: center;
     align-items: center;
 
-    
-
 }
-
 .searchBar ul li {
     text-align: left;
     text-decoration: none;
 }
-
 .peoplenum{
     float:left;
     margin-right: 10px;
+}
+
+.hotelbar{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkinbox{
+    
 }

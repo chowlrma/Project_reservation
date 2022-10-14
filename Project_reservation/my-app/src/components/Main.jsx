@@ -1,23 +1,31 @@
 import SearchBar from "../SearchBar";
 import "../App.css";
-import PeopleNum from "../PeopleNum";
 import PeopleNum1 from "../PeopleNum1";
+import Datepicker from "../datepicker";
 import { Link } from "react-router-dom";
 
+
 export default function Main() {
-  let subject = "LOGO";
+  
   const searchItems = [];
 
   return (
     <>
       <div className="App">
-        <div>{subject}</div>
+        <div>
+          <a href="/">
+          <img className="logo" src="/images/Logo.jpg" alt="mainlogo" />
+          </a>
+        </div>
         <div>
           <div className="searchbar">
             <SearchBar searchItems={searchItems} />
+            <Datepicker/>
+            <PeopleNum1/>
+
           </div>
           <div>
-            <PeopleNum1/>
+            
           </div>
         </div>
       </div>
