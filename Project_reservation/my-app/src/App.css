@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     background-color:brown;
+    position: relative;
 }
 .searchbar{
     display: flex;
@@ -28,7 +29,7 @@
 }
 
 .hotelbar{
-    margin-top: 60px;
+    margin-top: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,4 +68,55 @@
 
 .optionCounterButton:disabled{
     cursor: not-allowed;
+}
+
+.headerSearch{
+    height: 30px;
+    background-color: white;
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0px;
+    border-radius: 5px;
+    position: absolute;
+    width:100%;
+    max-width: 1024px;
+    margin-top: 150px;
+}
+
+.headerSearchItem{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.headerSearchInput{
+    border: none;
+    outline: none;
+}
+
+.headerSearchText{
+    color: lightgray;
+    cursor: pointer;
+}
+
+.headerContainer{
+    width: 100%;
+    max-width: 1024px;
+    margin: 20px 0px 100px 0px;
+    margin-left: 150px;
+}
+
+.headerList{
+    display: flex;
+    gap: 60px;
+}
+
+.headerListItem{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 40px;
+    color: black;
 }

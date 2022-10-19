@@ -9,6 +9,7 @@ import { useState } from "react";
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
 
+
 export default function Main() {
   const [openDate, setOpenDate] = useState(false);
   const searchItems = [];
@@ -47,8 +48,15 @@ export default function Main() {
 
       <div className="">
         <div>
-          <div className="searchbar">
-            <SearchBar searchItems={searchItems} />
+          <div className="headerSearch">
+            <div className="headerSearchItem">
+              <input
+                classname="headerSearchInput"
+                type="text"
+                placeholder="장소 검색"
+              />
+            </div>
+
             <span
               onClick={() => setOpenDate(!openDate)}
               className="headerSearchText"
@@ -66,68 +74,77 @@ export default function Main() {
               />
             )}
             <div className="headerSearchItem">
-              <span onClick={()=> setOpenOptions(!openOptions)} className="hearderSearchText">{`${options.adult} adult | ${options.children} children | ${options.room} room`}</span>
-              {openOptions && (<div className="options">
-                <div className="optionItem">
-                  <span className="optionText">Adult</span>
-                  <div className="optionCounter">
-                    <button
-                      disabled={options.adult <= 1}
-                      className="optionCounterButton"
-                      onClick={() => handleOption("adult", "d")}
-                    >
-                      -
-                    </button>
-                    <span className="optionCounterNumber">{options.adult}</span>
-                    <button
-                      className="optionCounterButton"
-                      onClick={() => handleOption("adult", "i")}
-                    >
-                      +
-                    </button>
+              <span
+                onClick={() => setOpenOptions(!openOptions)}
+                className="hearderSearchText"
+              >{`${options.adult} adult | ${options.children} children | ${options.room} room`}</span>
+              {openOptions && (
+                <div className="options">
+                  <div className="optionItem">
+                    <span className="optionText">Adult</span>
+                    <div className="optionCounter">
+                      <button
+                        disabled={options.adult <= 1}
+                        className="optionCounterButton"
+                        onClick={() => handleOption("adult", "d")}
+                      >
+                        -
+                      </button>
+                      <span className="optionCounterNumber">
+                        {options.adult}
+                      </span>
+                      <button
+                        className="optionCounterButton"
+                        onClick={() => handleOption("adult", "i")}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <div className="optionItem">
+                    <span className="optionText">Children</span>
+                    <div className="optionCounter">
+                      <button
+                        disabled={options.children <= 0}
+                        className="optionCounterButton"
+                        onClick={() => handleOption("children", "d")}
+                      >
+                        -
+                      </button>
+                      <span className="optionCounterNumber">
+                        {options.children}
+                      </span>
+                      <button
+                        className="optionCounterButton"
+                        onClick={() => handleOption("children", "i")}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <div className="optionItem">
+                    <span className="optionText">Room</span>
+                    <div className="optionCounter">
+                      <button
+                        disabled={options.room <= 1}
+                        className="optionCounterButton"
+                        onClick={() => handleOption("room", "d")}
+                      >
+                        -
+                      </button>
+                      <span className="optionCounterNumber">
+                        {options.room}
+                      </span>
+                      <button
+                        className="optionCounterButton"
+                        onClick={() => handleOption("room", "i")}
+                      >
+                        +
+                      </button>
+                    </div>
                   </div>
                 </div>
-                <div className="optionItem">
-                  <span className="optionText">Children</span>
-                  <div className="optionCounter">
-                    <button
-                      disabled={options.children <= 0}
-                      className="optionCounterButton"
-                      onClick={() => handleOption("children", "d")}
-                    >
-                      -
-                    </button>
-                    <span className="optionCounterNumber">
-                      {options.children}
-                    </span>
-                    <button
-                      className="optionCounterButton"
-                      onClick={() => handleOption("children", "i")}
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-                <div className="optionItem">
-                  <span className="optionText">Room</span>
-                  <div className="optionCounter">
-                    <button
-                      disabled={options.room <= 1}
-                      className="optionCounterButton"
-                      onClick={() => handleOption("room", "d")}
-                    >
-                      -
-                    </button>
-                    <span className="optionCounterNumber">{options.room}</span>
-                    <button
-                      className="optionCounterButton"
-                      onClick={() => handleOption("room", "i")}
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              </div>)}
+              )}
             </div>
             <div className="hearderSearchItem">
               <button className="headerBtn">Search</button>
@@ -137,14 +154,22 @@ export default function Main() {
       </div>
 
       <div className="hotelbar">
-        <nav style={{ paddingBottom: "1rem" }}>
-          <div style={{ fontSize: "30px" }}>
-            <Link to="/invoices">Hotel</Link> |{" "}
-            <Link to="/expenses">Motel</Link> |{" "}
-            <Link to="/Camping">Camping</Link> |{" "}
-            <Link to="/Pension">Pension</Link>
+        <div className="headerContainer">
+          <div className="headerList">
+            <div className="headerListItem">
+              <Link to="/invoices">Hotel</Link>
+            </div>
+            <div className="headerListItem">
+              <Link to="/expenses">Motel</Link>
+            </div>
+            <div className="headerListItem">
+              <Link to="/Camping">Camping</Link>
+            </div>
+            <div className="headerListItem">
+              <Link to="/Pension">Pension</Link>
+            </div>
           </div>
-        </nav>
+        </div>
       </div>
     </>
   );
